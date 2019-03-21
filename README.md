@@ -9,3 +9,5 @@ Please write your initial proposal for your final project in this README documen
 - Something else?
 
 Where do you expect to find data? Do you need help finding data? What question will your project answer or purpose will it solve?
+
+We plan on doing a Shiny App. 
