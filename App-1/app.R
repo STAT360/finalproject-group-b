@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #install.packages(c("maps", "mapproj", "colorRamps", "shiny", "dplyr", 
                    "leaflet", "rgdal", "sf", "tidyverse", "readr"))
 library(maps)
@@ -12,9 +13,11 @@ library(dplyr)
 library(tidyverse)
 library(readr)
 source("/cloud/project/helpers.R")
+=======
+#Run prerun.R before running
+>>>>>>> e0c8bedb624ab13d795a7d478aaf8b34ccab5c2c
 
-dataTable <- read_csv("/cloud/project/data/final_table.csv")
-rdsTable <- saveRDS(dataTable)
+source("/cloud/project/helpers.R")
 
 ui <- fluidPage(
   titlePanel("Livability in the US"),
