@@ -9,11 +9,12 @@ ui <- fluidPage(
         helpText("This is just filler for now."),
         selectInput("var", 
                     label = "Choose a variable to display",
-                    choices = list("Number of Parks", 
+                    choices = list("Select one..."
+                                   "Number of Parks", 
                                    "Other things",
                                    "Other things1", 
                                    "Other things2"),
-                    selected = "Number of Parks")
+                    selected = "Select one...")
       ), #sidebarPanel end
       mainPanel(
         textOutput("selected_var"),

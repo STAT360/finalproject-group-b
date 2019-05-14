@@ -18,4 +18,6 @@ library(tidyverse)
 library(readr)
 
 initial_table <- read_csv("/cloud/project/data/final_table.csv")
-final_table <- saveRDS(dataTable,file="/cloud/project/data/final_table.rds")
+saveRDS(dataTable,file="/cloud/project/data/final_table.rds")
+final_table <- readRDS("/cloud/project/data/final_table.rds")
+
