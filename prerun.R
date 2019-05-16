@@ -16,6 +16,7 @@ library(leaflet)
 library(dplyr)
 library(tidyverse)
 library(readr)
+library(RColorBrewer)
 
 initial_table <- read_csv("/cloud/project/data/final_table.csv")
 saveRDS(dataTable,file="/cloud/project/data/final_table.rds")

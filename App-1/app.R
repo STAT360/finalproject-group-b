@@ -10,6 +10,7 @@ ui <- fluidPage(
                     label = "Choose a variable to filter by:",
                     choices = list("Unemployment Rate", 
                                    "Health Insurance Coverage",
+                                   "Graduation Rate",
                                    "Median Income", 
                                    "Crime Rate"),
                     selected = c(1,2,3,4))
@@ -24,10 +25,13 @@ ui <- fluidPage(
 server <- function(input, output) {
   output$map <- renderPlot({
     data <- switch(input$var, 
-                   "Unemployment Rate" = final_table$`Unemployment Rate`,
-                   "Health Insurance Coverage" = final_table$`Total Health Insurance Coverage Uninsured, Percent`
+                   "Unemployment Rate" = final_table$`Rank_Unemployment`,
+                   "Health Insurance Coverage" = final_table$`Rank_Health_Insurance_Uninsured`,
+                   "Graduation Rate" = final_table$`Graduation_Rate_Rank`,
+                   "Median Income" = final_table$`Median_Income_Rank`,
+                   "Crime Rate" = final_table$`Violent_Crime_Rate_Per_100000_Rank`
     )
-    percent_map(var = data, color = colorRamps::matlab.like(n = 10), legend.title = input$var)
+    percent_map(var = data, color = brewer.pal(5,"YlGn"), legend.title = input$var)
   })
 }
 
