@@ -1,4 +1,4 @@
-State,Unemployment Rate,Rank (Unemployment Rate),"Total Health Insurance Coverage Uninsured, Percent",Margin Of Error
+State,unemploymentRate,Rank (Unemployment Rate),healthInsuranceCoverage,Margin Of Error
 Alabama,3.7,24,10.70%,+/- 0.2%
 Alaska,6.5,51,15.50%,+/- 0.3%
 Arizona,5,47,12.20%,+/- 0.2%
@@ -50,4 +50,4 @@ Washington,4.6,44,8.30%,+/- 0.1%
 West Virginia,5.1,48,8%,+/- 0.2%
 Wisconsin,2.9,8,6.50%,+/- 0.1%
 Wyoming,3.7,24,11.90%,+/- 0.4%
-Note: Rates shown are a percentage of the labor force. Data refer to place of residence. Estimates for the current month are subject to revision the following month. ,,,,
+Note: Rates shown are a percentage of the labor force. Data refer to place of residence. Estimates for the current month are subject to revision the following month.?,,,,
