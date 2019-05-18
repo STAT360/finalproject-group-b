@@ -6,14 +6,14 @@ ui <- fluidPage(
    sidebarLayout(
       sidebarPanel(
         helpText("This is just filler for now."),
-        checkboxGroupInput("var", 
+        selectInput("var", 
                     label = "Choose a variable to filter by:",
                     choices = list("Unemployment Rate", 
                                    "Health Insurance Coverage",
                                    "Graduation Rate",
                                    "Median Income", 
                                    "Crime Rate"),
-                    selected = c(1,2,3,4))
+                    selected = "Unemployment Rate")
       ), #sidebarPanel end
       mainPanel(
         textOutput("selected_var"),
@@ -31,7 +31,7 @@ server <- function(input, output) {
                    "Median Income" = final_table$`Median_Income_Rank`,
                    "Crime Rate" = final_table$`Violent_Crime_Rate_Per_100000_Rank`
     )
-    percent_map(var = data, color = brewer.pal(5,"YlGn"), legend.title = input$var)
+    percent_map(var = data, color = rev(brewer.pal(5,"YlGn")), legend.title = input$var)
   })
 }
 
