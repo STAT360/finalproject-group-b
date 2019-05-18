@@ -14,24 +14,26 @@ percent_map <- function(var, color, legend.title, min = 1, max = 50) {
   # plot choropleth map
   map("state", fill = TRUE, col = fills, 
     resolution = 0, lty = 0, projection = "polyconic", 
-    myborder = 0, mar = c(0,0,0,0))
+    myborder = 0, mar = c(0,0,0,0,0))
   
   # overlay state borders
   map("state", col = "white", fill = FALSE, add = TRUE,
     lty = 1, lwd = 1, projection = "polyconic", 
-    myborder = 0, mar = c(0,0,0,0))
+    myborder = 0, mar = c(0,0,0,0,0))
   
   # add a legend
   inc <- (max - min) / 5
    legend.text <- c(
     paste0(min, " - 10"),
-    paste0(min + inc, " - 20"),
-    paste0(min + 2 * inc, " - 30"),
-    paste0(min + 3 * inc, " - 40"),
-    paste0(max, " - 50"))
+    paste0(ceiling(min + inc), " - 20"),
+    paste0(ceiling(min + 2 * inc), " - 30"),
+    paste0(ceiling(min + 3 * inc), " - 40"),
+    paste0("41 - 50"))
   
+  new_title = paste0(legend.title, " Rank")
+   
   legend("bottomleft", 
     legend = legend.text, 
     fill = shades[c(10,20,30,40,50)], 
-    title = legend.title)
+    title = new_title)
 }

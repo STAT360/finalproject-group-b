@@ -19,5 +19,5 @@ library(readr)
 library(RColorBrewer)
 
 initial_table <- read_csv("/cloud/project/data/final_table.csv")
-saveRDS(dataTable,file="/cloud/project/data/final_table.rds")
+saveRDS(initial_table,file="/cloud/project/data/final_table.rds")
 final_table <- readRDS("/cloud/project/data/final_table.rds")
