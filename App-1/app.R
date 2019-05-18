@@ -12,11 +12,16 @@ ui <- fluidPage(
                                    "Graduation Rate",
                                    "Median Income", 
                                    "Crime Rate"),
-                    selected = "Unemployment Rate")
+                    selected = "Unemployment Rate"),
+        selectInput("state",
+                    label = "Choose a state to see all data:",
+                    choices = final_table$'State',
+                    selected = NULL)
       ), #sidebarPanel end
       mainPanel(
         textOutput("selected_var"),
-        plotOutput("map")
+        plotOutput("map"),
+        tableOutput("table")
       ) #mainPanel end
   )
 )
@@ -32,6 +37,9 @@ server <- function(input, output) {
     )
     percent_map(var = data, color = rev(brewer.pal(5,"YlGn")), legend.title = input$var)
   })
+  output$table <- renderTable(
+                    select(final_table,`State`, `Rank_Unemployment`)
+                    )
 }
 
 # Run the app ----
