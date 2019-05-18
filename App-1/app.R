@@ -1,4 +1,3 @@
-
 source("/cloud/project/helpers.R")
 
 ui <- fluidPage(
