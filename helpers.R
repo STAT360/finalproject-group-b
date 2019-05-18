@@ -1,10 +1,10 @@
 # Note: percent map is designed to work with the counties data set
 # It may not work correctly with other data sets if their row order does 
 # not exactly match the order in which the maps package plots counties
-percent_map <- function(var, color, legend.title, min = 1, max = 50) {
+percent_map <- function(var, color, legend.title, min = 1, max = 48) {
 
   # generate vector of fill colors for map
-  shades <- colorRampPalette(c("white", color))(50)
+  shades <- colorRampPalette(c("white", color))(48)
   
   # constrain gradient to percents that occur between min and max
   var <- pmax(var, min)
