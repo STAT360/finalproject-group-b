@@ -1,4 +1,4 @@
-State,Unemployment_Rate,Rank_Unemployment,Health_Insurance_Uninsured,Rank_Health_Insurance_Uninsured,Graduation_Rate,Graduation_Rate_Rank,Median_Income,Median_Income_Rank,Violent_Crime_Rate_Per_100000,Violent_Crime_Rate_Per_100000_Rank
+State,Unemployment Rate,Unemployment Rate Rank,Health Insurance,Health Insurance Rank,Graduation Rate,Graduation Rate Rank, Median Income,Median Income Rank,Crime Rate,Crime Rate Rank
 Alabama,3.7,27,10.70%,33,89.30%,3,"$46,472.00 ",47,554.9,45
 Arizona,5,47,12.20%,41,77.40%,44,"$53,510.00 ",30,358,26
 Arkansas,3.7,27,10.60%,32,84.90%,25,"$43,813.00 ",49,829,50

@@ -8,7 +8,7 @@ ui <- fluidPage(
         selectInput("var", 
                     label = "Choose a variable to filter by:",
                     choices = list("Unemployment Rate", 
-                                   "Health Insurance Coverage",
+                                   "Health Insurance",
                                    "Graduation Rate",
                                    "Median Income", 
                                    "Crime Rate"),
@@ -29,26 +29,19 @@ ui <- fluidPage(
 server <- function(input, output) {
   output$map <- renderPlot({
     data <- switch(input$var, 
-                   "Unemployment Rate" = final_table$`Rank_Unemployment`,
-                   "Health Insurance Coverage" = final_table$`Rank_Health_Insurance_Uninsured`,
-                   "Graduation Rate" = final_table$`Graduation_Rate_Rank`,
-                   "Median Income" = final_table$`Median_Income_Rank`,
-                   "Crime Rate" = final_table$`Violent_Crime_Rate_Per_100000_Rank`
-    )
+                   "Unemployment Rate" = final_table$`Unemployment Rate Rank`,
+                   "Health Insurance"= final_table$`Health Insurance Rank`,
+                   "Graduation Rate" = final_table$`Graduation Rate Rank`,
+                   "Median_Income_Rank" = final_table$`Median Income Rank`,
+                   "Crime Rate"  = final_table$`Crime Rate Rank`)
     percent_map(var = data, color = rev(brewer.pal(5,"YlGn")), legend.title = input$var)
   })
-  rank <- switch(input$var,
-                 "Unemployment Rate" = final_table$`Rank_Unemployment`,
-                 "Health Insurance Coverage" = final_table$`Rank_Health_Insurance_Uninsured`,
-                 "Graduation Rate" = final_table$`Graduation_Rate_Rank`,
-                 "Median Income" = final_table$`Median_Income_Rank`,
-                 "Crime Rate" = final_table$`Violent_Crime_Rate_Per_100000_Rank`
-  )
+  
   output$table <- renderTable(
-                    final_table %>%
-                    select(`State`, rank) %>% 
-                    filter(`State`==input$state)
-                  )
+    final_table %>%
+      select(`State`,paste0(input$var, " Rank")) %>% 
+      filter(`State`==input$state)
+  )
 }
 
 # Run the app ----
