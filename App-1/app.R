@@ -37,9 +37,18 @@ server <- function(input, output) {
     )
     percent_map(var = data, color = rev(brewer.pal(5,"YlGn")), legend.title = input$var)
   })
+  rank <- switch(input$var,
+                 "Unemployment Rate" = final_table$`Rank_Unemployment`,
+                 "Health Insurance Coverage" = final_table$`Rank_Health_Insurance_Uninsured`,
+                 "Graduation Rate" = final_table$`Graduation_Rate_Rank`,
+                 "Median Income" = final_table$`Median_Income_Rank`,
+                 "Crime Rate" = final_table$`Violent_Crime_Rate_Per_100000_Rank`
+  )
   output$table <- renderTable(
-                    select(final_table,`State`, `Rank_Unemployment`)
-                    )
+                    final_table %>%
+                    select(`State`, rank) %>% 
+                    filter(`State`==input$state)
+                  )
 }
 
 # Run the app ----

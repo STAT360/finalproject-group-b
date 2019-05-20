@@ -3,8 +3,7 @@
 #Reads in csv file
 #Writes to rds file
 
-#install.packages(c("maps", "mapproj", "colorRamps", "shiny", "dplyr", 
-# "leaflet", "rgdal", "sf", "tidyverse", "readr"))
+#install.packages(c("maps", "mapproj", "colorRamps", "shiny", "dplyr", "leaflet", "rgdal", "sf", "tidyverse", "readr"))
 library(maps)
 library(mapproj)
 library(colorRamps)
