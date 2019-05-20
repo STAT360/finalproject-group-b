@@ -39,7 +39,7 @@ server <- function(input, output) {
   
   output$table <- renderTable(
     final_table %>%
-      select(`State`,paste0(input$var, " Rank")) %>% 
+      select(`State`,input$var,paste0(input$var, " Rank")) %>% 
       filter(`State`==input$state)
   )
 }
