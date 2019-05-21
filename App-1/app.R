@@ -4,7 +4,11 @@ ui <- fluidPage(
   titlePanel("Livability in the US"),
    sidebarLayout(
       sidebarPanel(
-        helpText("This is just filler for now."),
+        helpText("Unemployment Rate = % unemployed"),
+        helpText("Health Ensurance = % uninsured"),
+        helpText("Graduation Rate = % graduated high school"),
+        helpText("Median Income = dollars"),
+        helpText("Crime Rate = violent crime per 100,000 people"),
         selectInput("var", 
                     label = "Choose a variable to filter by:",
                     choices = list("Unemployment Rate", 
