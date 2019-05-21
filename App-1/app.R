@@ -18,7 +18,7 @@ ui <- fluidPage(
                                    "Crime Rate"),
                     selected = "Unemployment Rate"),
         selectInput("state",
-                    label = "Choose a state to see all data:",
+                    label = "Choose a state to see specific data:",
                     choices = c("All",final_table$'State'),
                     selected = NULL)
       ), #sidebarPanel end
